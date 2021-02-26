@@ -131,7 +131,7 @@ def all_players
   all_players = game_hash[:home][:players].concat(game_hash[:away][:players])
 end
 
-def num_points_scored player_name
+def num_points_scored (player_name)
   all_players.each do |player|
     if player[:player_name] == player_name
       return player[:points]
@@ -139,7 +139,7 @@ def num_points_scored player_name
   end
 end
 
-def shoe_size player_name
+def shoe_size (player_name)
   all_players.each do |player|
     if player[:player_name] == player_name
       return player[:shoe]
@@ -147,7 +147,7 @@ def shoe_size player_name
   end
 end
 
-def team_colors team_name
+def team_colors (team_name)
   if team_name == game_hash[:home][:team_name]
     return game_hash[:home][:colors]
   else
@@ -162,7 +162,7 @@ def team_names
   team_names
 end
 
-  def player_numbers teamname 
+  def player_numbers (teamname) 
   numbers = []
   game_hash.each do |team, team_info|
     if team_info[:team_name] == teamname
@@ -178,7 +178,7 @@ end
   numbers
 end
   
-def player_stats player_param
+def player_stats (player_param)
   all_players.each do |players|
     if players[:player_name] == player_param
       return players
